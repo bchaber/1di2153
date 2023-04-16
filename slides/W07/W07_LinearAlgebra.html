@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AwID 2023L</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../remark.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  </head>
+  <body>
+  <!-- ** -->
+    <textarea id="source"></textarea>
+
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>    
+    <script>
+      mermaid.initialize({
+        mermaid: {startOnLoad: false,
+        cloneCssStyles: false}
+      });
+    </script>
+    <script>
+
+    var slideshow = remark.create({
+      sourceUrl: 'W07_LinearAlgebra.md',
+      countIncrementalSlides: false,
+      highlightLanguage: 'javascript',
+      highlightStyle: 'github',
+      highlightLines: true
+    });
+    slideshow.on("afterShowSlide", s => {
+      const [slide] = document.getElementsByClassName("remark-visible");
+      var diags = Array.from(slide.getElementsByClassName("mermaid"));
+      mermaid.init({logLevel: 0}, diags);
+    });
+    // Setup MathJax
+     MathJax.Hub.Config({
+         tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+         }
+     });
+     MathJax.Hub.Queue(function() {
+         $(MathJax.Hub.getAllJax()).map(function(index, elem) {
+             return(elem.SourceElement());
+         }).parent().addClass('has-jax');
+     });
+
+     MathJax.Hub.Configured();
+
+    </script>
+    <script src="../decoratelb.js"></script>
+  </body>
+</html>
