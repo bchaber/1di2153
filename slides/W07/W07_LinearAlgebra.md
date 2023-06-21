@@ -212,7 +212,7 @@ Forma kwadratowa `\(\mathbf{v}^T \cdot \mathbf{A} \cdot \mathbf{v}\)` reprezentu
 ---
 ### Macierz unitarna
 Macierz, której macierz odwrotna jest równa sprzężeniu hermitowskiemu:
-`\(\mathbf{U}\cdot\mathbf{U}^H=\mathbf{U}^T\cdot\mathbf{U}=\mathbf{I}\)`
+`\(\mathbf{U}\cdot\mathbf{U}^H=\mathbf{U}^H\cdot\mathbf{U}=\mathbf{I}\)`
 ```julia
 > U = [0.0 1im; 1im 0.0]
 2×2 Matrix{ComplexF64}:
